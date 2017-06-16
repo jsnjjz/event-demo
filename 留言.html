@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function(){
+			var oTxt = document.getElementsByTagName("input")[0];
+			var oBtn = document.getElementsByTagName("input")[1];
+			var oText = document.getElementsByTagName("textarea")[0];
+			oTxt.onkeydown = function (ev){
+				var oEvent = ev||event;
+				if (oEvent.keyCode == 13 && oEvent.ctrlKey){
+				oText.value += oTxt.value+"\n";
+				oTxt.value = "";
+					
+				}
+			
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text">
+	<input type="button" value="发布"><br>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+</html>

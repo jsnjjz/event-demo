@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			background: yellowgreen;
+		}
+	</style>
+	<script src="getPos.js"></script>
+	<script>
+			document.onmousemove = function (ev){
+				var aDiv = document.getElementsByTagName("div");
+				var oEvent = ev||event;
+				var pos = getPos(oEvent);
+				for (var i=aDiv.length-1; i>0; i--){
+					aDiv[i].style.left = aDiv[i-1].offsetLeft+"px";
+					aDiv[i].style.top = aDiv[i-1].offsetTop+"px";
+				}
+				aDiv[0].style.left = pos.x+"px";
+				aDiv[0].style.top = pos.y+"px";
+			}
+		window.onload = function(){
+		}
+	
+	</script>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

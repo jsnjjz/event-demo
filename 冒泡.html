@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 300px;
+			height: 200px;
+			background: yellowgreen;
+			display: none;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBtn = document.getElementsByTagName("button")[0];
+			var oDiv = document.getElementsByTagName("div")[0];
+			oBtn.onclick = function (ev){
+				oDiv.style.display = "block";
+				oEvent = ev||event;
+				oEvent.cancelBubble=true;
+//				alert("我是div");
+			}
+			document.onclick = function (){
+				oDiv.style.display = "none";
+//				alert("我是document");
+			}
+	}
+	</script>
+</head>
+<body>
+	<button>按钮</button>
+	<div></div>
+</body>
+</html>

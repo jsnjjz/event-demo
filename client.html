@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			height: 2000px;
+		}
+		div {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			background: yellowgreen;
+		}
+	</style>
+	<script>
+		function getPos(ev){
+			var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+			
+			var scrollLeft = document.documentElement.scrollLeft||document.body.scrollLeft;
+			
+			return{x:ev.clientX+scrollLeft,y:ev.clientY+scrollTop};
+		}
+		
+		
+		
+		window.onload = function(){
+			document.onmousemove = function (ev){
+				var oDiv = document.getElementsByTagName("div")[0];
+				var oEvent = ev||event;
+//				var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+//				//兼容火狐    、、  兼容 谷歌
+//				oDiv.style.left = oEvent.clientX+"px";
+//				oDiv.style.top = oEvent.clientY+scrollTop+"px";
+				
+				var pos=getPos(oEvent);
+				oDiv.style.left = pos.x+"px";
+				oDiv.style.top = pos.y+"px";
+			}
+		}
+			
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
